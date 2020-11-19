@@ -1,25 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 
 int main(int argc, char *argv[]) {
 
-	int i = 0;
-	char str[4];
+	char src[] = "The worst things to eat before you sleep";
+	char dst[100];
+	char str[30] = "happy C programming";
 
-	str[0] = 'a';
-	str[1] = 'b';
-	str[2] = 'c';
-	str[3] = '\0';
+	strcpy(dst, src);
 
-	printf("%s\n", str);
-
-	while(str[i])
-	{
-		printf("%c", str[i]);
-		i+=1;
-	}
-
+	printf("copied string : %s\n", dst);
+	printf("문자열\"%s\"의 길이 : %i\n", str, strlen(str));
+	
 	return 0;
 }
 
