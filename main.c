@@ -5,14 +5,23 @@
 
 int main(int argc, char *argv[]) {
 
-	char src[] = "The worst things to eat before you sleep";
-	char dst[100];
-	char str[30] = "happy C programming";
+	FILE* fp;
+	char str[100];
 
-	strcpy(dst, src);
+	fp = fopen("sample.txt", "w");
 
-	printf("copied string : %s\n", dst);
-	printf("문자열\"%s\"의 길이 : %i\n", str, strlen(str));
+	if (fp == NULL)	
+	{
+		return -1;
+	}
+
+	for(int i=0 ; i<3; i++)
+	{
+		printf("Input a word : ");
+		scanf("%s", str);
+		fprintf(fp, "%s\n", str);
+	}
+	fclose(fp);
 	
 	return 0;
 }
